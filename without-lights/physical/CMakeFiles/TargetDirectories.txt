@@ -1,0 +1,3 @@
+/home/sabinka/Desktop/semester/UBP/bakalarka_kod/without-lights/physical/CMakeFiles/rebuild_cache.dir
+/home/sabinka/Desktop/semester/UBP/bakalarka_kod/without-lights/physical/CMakeFiles/edit_cache.dir
+/home/sabinka/Desktop/semester/UBP/bakalarka_kod/without-lights/physical/CMakeFiles/physical.dir
