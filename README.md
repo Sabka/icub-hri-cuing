@@ -13,15 +13,17 @@ Spúšťanie:
 
 Zvolíme si, či chceme pracovať so skutočnými svetlami - priečinkom with-lights alebo len so svetlami v podobe výpisov na konzolu - priečinkom without-lights. Vrámci priečinka si zvolíme, či chceme pracovať s robotom v simulátore - priečinok simulator, alebo s fyzickým robotom - priečinok physical.
 
+Ak pracujeme s robotom v simulátore, je nutné: 
+- spustiť YARP server
+- spustiť aplikáciu iCubSIM
+
+Ak pracujeme s fyzickým robotom, je nutné:
+- pripojiť sa na YARP server, na ktorý je pripojený iCub
+
 Program v zvolenom priečinku je potrebné skompilovať pomocou CMake. 
 Následne je program spúšťaný z terminálového okna na operačnom systéme 
-Ubuntu 20.04.4 LTS (Focal Fossa). Pri spúšťaní je treba
+Ubuntu 20.04. Pri spúšťaní je treba
 ako parameter zadať meno robota. To je prefix názvov portov pripojených na YARP
 serveri, napríklad icubSim ak máme spustený simulátor. 
 Program potom spustíme pomocou ./<názov skompilovaného spustiteľného súboru> --robot <meno robota>, 
   teda napríklad ./simulator --robot icubSim. 
-  
-Ak je program spúšťaný správne, pár sekúnd načítava encodery, o
-čom nás aj notifikuje a následne sa objaví výzva na zadanie identifikačného čísla účast-
-níka. Po zadaní a potvrdení klávesou Enter začne prebiehať experiment skladajúci sa
-z 80 meraní reakčného času, teda iterácií
