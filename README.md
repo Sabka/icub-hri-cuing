@@ -23,5 +23,7 @@ Then we have to compile program in selected folder using CMake.
 After compilation, program can be run from terminal window with parameter --robot (robots name in YARP server, ie. icubSim when using iCub simulator).
 
 Examples:
-./<name of compiled file> --robot <robot name>, 
-./simulator --robot icubSim. 
+
+`./<name of compiled file> --robot <robot name>`
+
+`./simulator --robot icubSim`
