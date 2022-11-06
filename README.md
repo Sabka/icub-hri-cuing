@@ -1,29 +1,27 @@
-Zdrojový kód v tomto repozitári je súčasťou projektu zameriavajúceho sa na skúmanie efektu sociálneho pohľadu v interakcii človeka a robota. Kód pracuje s robotom iCub v dvoch formách stelesnenia.
-Kód je vyvinutý, testovaný a používaný na opereačnom systéme Ubuntu 20.04.4 LTS (Focal Fossa).
+Source code in this repository belongs to project focussing on gaze cuing effect in human robot interaction. Code control robot iCub in two forms of embodiment. Code was developed, tested and used under Ubuntu 20.04.4 LTS (Focal Fossa) OS.
+
+Repo contains: 
+- SDF model of world with robot iCub used for development with Gazebo simulator
+- folder _with-lights_ - which use our custom made lights for creating stimuli. This folder contains source code which demand connecting these ligths via USB.
+- folder _without-lights_ - contains source code that can be used without our custom made lights. Stimuli are simulated via console output.
+- folder results, which contains data measured by this soft for the gaze cuing experiment.
 
 
-Repozitár obsahuje :
-- model SDF sveta používaný pre vývoj pomocou simulátora Gazebo
-- priečinok with-lights - súčasťou vyvinutého prostredia bolo hardvérové zariadenie na vytváranie svetelných stimulov. Tento priečinok obsahuje zdrojové kódy, ktoré vyžadujú pripojenie tohto zariadenia pomocou USB.
-- priečinok without-lights - obsahuje podobné zdrojové kódy ako priečinok with-lights, s tým rozdielom, že nevyžadujú pripojenie hardvérového zariadenia na vytváranie svetelných stimulov, svetelné stimuly sú simulované výpisom na konzolu. 
-- priečinok results, ktorý obsahuje dáta namerané týmto softvérom, pre účely skúmania psychologického efektu sociálneho pohľadu
 
+Usage:
 
-Spúšťanie:
+First, we select whether we want to use real hardware lights or only console as stimuli. Based on this we wil choose the folder _with-lights_ or _without-lights_. Then we choose the robot form of embodiment - physical iCub robot (folder physical) or robot in iCub simulator (folder simulator).
 
-Zvolíme si, či chceme pracovať so skutočnými svetlami - priečinkom with-lights alebo len so svetlami v podobe výpisov na konzolu - priečinkom without-lights. Vrámci priečinka si zvolíme, či chceme pracovať s robotom v simulátore - priečinok simulator, alebo s fyzickým robotom - priečinok physical.
+If we selected robot in simulator, we need to :
+- run YARP server
+- run simulator iCubSIM
 
-Ak pracujeme s robotom v simulátore, je nutné: 
-- spustiť YARP server
-- spustiť aplikáciu iCubSIM
+If we selected physical robot, we need to :
+- connect to YARP server, where the robot iCub is connected
 
-Ak pracujeme s fyzickým robotom, je nutné:
-- pripojiť sa na YARP server, na ktorý je pripojený iCub
+Then we have to compile program in selected folder using CMake.
+After compilation, program can be run from terminal window with parameter --robot (robots name in YARP server, ie. icubSim when using iCub simulator).
 
-Program v zvolenom priečinku je potrebné skompilovať pomocou CMake. 
-Následne je program spúšťaný z terminálového okna na operačnom systéme 
-Ubuntu 20.04. Pri spúšťaní je treba
-ako parameter zadať meno robota. To je prefix názvov portov pripojených na YARP
-serveri, napríklad icubSim ak máme spustený simulátor. 
-Program potom spustíme pomocou ./<názov skompilovaného spustiteľného súboru> --robot <meno robota>, 
-  teda napríklad ./simulator --robot icubSim. 
+Examples:
+./<name of compiled file> --robot <robot name>, 
+./simulator --robot icubSim. 
